@@ -1,0 +1,495 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    min-height: 100%;
+}
+
+body{
+    font-family: 'Ubuntu';
+    font-size: 13px;
+    font-weight: 300;
+    background-color: hsl(229, 24%, 87%);
+}
+
+.container{
+    margin: 5% 20%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    height: fixed;
+}
+
+/* -------------sidebar-------------- */
+.sidebar{
+    margin: 2%; 
+    flex: 0 0 25%;
+    background: url('./assets/images/bg-sidebar-desktop.svg') no-repeat;
+    /* padding: 2%; */
+    color: white;
+    border-radius: 10px;
+    background-size:cover;
+    min-width: 200px;
+    justify-content: flex-start;
+}
+.sb{
+    margin: 5%;
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+}
+
+
+.sidebar p{
+    text-transform: uppercase;
+    line-height: 1rem;
+}
+
+.sidebar button{
+    border-radius: 100%;
+    padding: 1%;
+    flex: 12%;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    justify-content: center;
+    font-size: 0.8rem;
+    /* margin: 1% auto; */
+
+}
+
+.sidebar button:hover{
+    cursor: pointer;
+}
+
+.sb-name{
+    flex: 80%;
+    margin-left: 7%;
+    font-weight: 700;
+}
+
+.sb-gray{
+    color: hsl(231, 11%, 63%);
+}
+
+/* -------------step common-------------------- */
+.stepDetail{
+    margin:2%;
+    padding: 0% 2%;
+    flex: 75%;
+    flex-direction: column;
+    color: hsl(213, 96%, 18%);
+    min-height:400px;
+}
+
+.step{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* step top  */
+.step-top{
+    flex: 15%;
+    margin: 3% 0 5% 0;
+}
+
+.step-title{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1%;
+}
+
+.step-guide{
+    color: hsl(231, 11%, 63%);
+}
+
+
+/* step foot */
+.step-foot{
+    flex: 10%;   
+    display: grid;
+    grid-template-columns: auto auto;
+    /* margin-bottom: 2%; */
+    width: 100%;
+    /* justify-content: flex-end; */
+} 
+.foot1{
+    text-align: left;
+}
+
+.foot2{
+    text-align: right;
+}
+
+.btn-back{
+
+    padding: 3%;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    color: hsl(231, 11%, 63%);
+    font-weight: 700;
+}
+
+.btn-next{
+    margin-right: 0%;
+    padding: 3% 10%;
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 5px;
+    text-align: right;
+    color: white;
+    border: none;
+}
+
+.btn-confirm{
+    margin-right: 0%;
+    padding: 3% 10%;
+    background-color: hsl(243, 100%, 62%);
+    border-radius: 5px;
+    text-align: right;
+    color: white;
+    border: none;
+}
+
+.btn-back,.btn-confirm,.btn-next:hover{
+    cursor: pointer;
+}
+
+/*========================================================================================= */
+
+/* ----------step1 main ----- */
+.step1-main{
+    flex: 75%;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    margin-bottom: 5%;
+
+}
+
+.step1-main input[type=text]{
+    padding: 2%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 1% 0 3%;
+    color:hsl(213, 96%, 18%);
+    font-weight: 700;
+    cursor: pointer;
+    
+}
+
+.step1-main input[type=text]:placeholder{
+    color: hsl(231, 11%, 63%);
+}
+
+
+/* -----------step2 main---------------  */
+.step2-main{
+    flex: 75%;
+    font-weight: 500;
+    margin-bottom: 2%;
+}
+
+.step2-card{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.card{
+    flex: 15%;
+    margin: 2%;
+    padding: 2%;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid hsl(229, 24%, 87%);
+
+}
+
+.card-title{
+    font-size: 18px;
+}
+
+.card img{
+    margin-bottom: 10%;
+}
+
+.pricing{
+    color: hsl(231, 11%, 63%);
+}
+
+.yearly-free{
+    font-size: 0.8rem;
+}
+
+.card p{
+    line-height: 1.2rem;
+}
+
+.plan-type{
+    margin: 5% 2%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: hsl(217, 100%, 97%);
+    padding: 2%;
+    border-radius: 5px;
+}
+
+
+.pri-month, .pri-year{
+    margin: 0 3%;
+}
+/* ---------toggle switch --------------------*/
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+    display: inline;
+}
+
+.plan-type label {
+	cursor: pointer;
+	width: 30px;
+	height: 15px;
+	background: mediumspringgreen;
+	display: block;
+	border-radius: 100px;
+	position: relative;
+}
+
+.plan-type label:after {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 10px;
+	height: 10px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.1s;
+}
+
+input:checked + label {
+	background: blue;
+}
+
+input:checked + label:after {
+	left: calc(100% - 2px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 15px;
+}
+
+
+
+/* ---------------------------------step3 main----------------------------*/
+.step3-main{
+    flex: 75%;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: hsl(231, 11%, 63%);
+    margin-bottom: 2%;
+}
+
+.step3-r{
+    margin: 2% 0;
+    padding: 2%;
+    background-color:hsl(231, 100%, 99%) ;
+    border: 1px solid hsl(229, 24%, 87%);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.step3-r .addon{
+    flex: 80%;
+}
+
+.step3-r .pricing{
+    flex: 10%;
+    margin: 2% auto;
+    color: gray;
+}
+
+.addon-title{
+    font-size: 1rem;
+    color: hsl(213, 96%, 18%);
+    line-height: 1.2rem;
+}
+
+/* ----------checkbox css------------- */
+.step3-r .check{
+    flex: 10%;
+    display: block;
+    position: relative;
+    padding-top: 1%;
+    /* margin-bottom: 12px;  */
+    cursor: pointer;
+    font-size: 10px;
+    user-select: none;
+
+}
+
+/* Hide the browser's default checkbox */
+.check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .check:hover input ~ .checkmark {
+    /* background-color: #ccc; */
+    cursor: pointer;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .check input:checked ~ .checkmark {
+    background-color: hsl(243, 100%, 62%);
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .check input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .check .checkmark:after {
+    left: 5px;
+    /* top: 1px; */
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+
+
+  /* -----------------step 4---------------------------- */
+  .step4-main{
+    flex: 75%;
+    font-size: 0.8rem;
+    color: hsl(231, 11%, 63%);
+    margin-bottom: 5%;
+}
+
+.c-plan{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: hsl(213, 96%, 18%);
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    background-color: hsl(231, 100%, 99%);
+}
+
+.c-plan a{
+    font-size: 0.8rem;
+    color:  hsl(231, 11%, 63%);
+    font-weight: 300;
+}
+
+.c-name, .c-totalName{
+    flex: 80%;
+}
+
+.c-add{
+    color:hsl(231, 11%, 63%);
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    background-color: hsl(231, 100%, 99%);
+}
+
+.c-total{
+    padding: 3% 2%;
+    display: flex;
+    flex-direction: row;
+    color:hsl(231, 11%, 63%);
+}
+
+.c-totalPri{
+    color:  hsl(243, 100%, 62%);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+ /* -----------------step 5---------------------------- */
+
+ .step5-main{
+    flex: 75%;
+    font-size: 0.8rem;
+    color: hsl(231, 11%, 63%);
+    padding: 15% 10%;
+    text-align: center;
+}
+
+.step5-main img{
+    margin: 5%;
+}
+
+.step5-main .thankyou{
+    font-size: 2rem;
+    font-weight: 700;
+    color:hsl(213, 96%, 18%);
+    margin: 3%;
+
+}
+
+.step5-main p{
+    padding-bottom: 5%;
+}
+
+/* -----------------Show current active step-------------------- */
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.sb.active button {
+    background-color: hsl(206, 94%, 87%);
+    color: hsl(213, 96%, 18%);
+}
+
+.btn-back{
+    display: none;
+}
