@@ -114,7 +114,7 @@ body{
     flex: 10%;   
     display: grid;
     grid-template-columns: auto auto;
-    /* margin-bottom: 2%; */
+    margin-top: 5%;
     width: 100%;
     /* justify-content: flex-end; */
 } 
@@ -162,24 +162,34 @@ body{
 
 /*========================================================================================= */
 
-/* ----------step1 main ----- */
+/* -----------------step1 main -------------------------- */
 .step1-main{
     flex: 75%;
     display: flex;
     flex-direction: column;
     font-weight: 500;
     margin-bottom: 5%;
+    /* padding-right: 5%; */
+}
 
+
+
+.input-label{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 100%;
 }
 
 .step1-main input[type=text]{
+    box-sizing: border-box;
     padding: 2%;
     border: 1px solid gray;
     border-radius: 5px;
-    margin: 1% 0 3%;
+    margin: 1% 10% 3% 0;
     color:hsl(213, 96%, 18%);
     font-weight: 700;
     cursor: pointer;
+    width: 100%;
     
 }
 
@@ -187,19 +197,27 @@ body{
     color: hsl(231, 11%, 63%);
 }
 
+/* -------validate data ------ */
+.msg{
+    color: red;
+    font-size: 14px;
+    text-align: right;
+}
 
-/* -----------step2 main---------------  */
+
+
+/* -----------step2 main-----------------------------------  */
 .step2-main{
     flex: 75%;
     font-weight: 500;
     margin-bottom: 2%;
 }
 
-.step2-card{
+/* .step2-card{
     display: flex;
     flex-direction: row;
 
-}
+} */
 
 .card{
     flex: 15%;
@@ -208,8 +226,34 @@ body{
     background-color: white;
     border-radius: 5px;
     border: 1px solid hsl(229, 24%, 87%);
-
 }
+
+.card:hover{
+    border-color: hsl(243, 100%, 62%);
+    cursor: pointer;
+}
+/*radio btn css*/
+.card input{
+    display: none;
+}
+
+.radio-btn{
+    display: inline-block;
+}
+
+.card input:checked + .radio-btn{
+  border: 2px solid hsl(243, 100%, 62%);
+}
+
+.card input:checked + .radio-btn > i 
+{
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+
+
+/* in radio button */
 
 .card-title{
     font-size: 18px;
@@ -225,6 +269,7 @@ body{
 
 .yearly-free{
     font-size: 0.8rem;
+    /* display: none; */
 }
 
 .card p{
@@ -306,7 +351,7 @@ label:active:after {
 .step3-r{
     margin: 2% 0;
     padding: 2%;
-    background-color:hsl(231, 100%, 99%) ;
+    background-color:white ;
     border: 1px solid hsl(229, 24%, 87%);
     border-radius: 5px;
     display: flex;
@@ -314,6 +359,10 @@ label:active:after {
     justify-content: center;
 }
 
+.step3-r:hover{
+    border-color: hsl(243, 100%, 62%);
+    background-color:hsl(231, 100%, 99%) ;
+}
 .step3-r .addon{
     flex: 80%;
 }
@@ -330,6 +379,7 @@ label:active:after {
     line-height: 1.2rem;
 }
 
+
 /* ----------checkbox css------------- */
 .step3-r .check{
     flex: 10%;
@@ -337,7 +387,7 @@ label:active:after {
     position: relative;
     padding-top: 1%;
     /* margin-bottom: 12px;  */
-    cursor: pointer;
+    /* cursor: pointer; */
     font-size: 10px;
     user-select: none;
 
@@ -493,3 +543,5 @@ label:active:after {
 .btn-back{
     display: none;
 }
+
+
