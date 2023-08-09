@@ -82,7 +82,12 @@
                 <label for="name">Name</label>
                 <div class="msg msgName"></div>
               </div>
-              <input class="stepInput" type="text" id="name" placeholder="e.g. Stephen King" />  
+              <input
+                class="stepInput"
+                type="text"
+                id="name"
+                placeholder="e.g. Stephen King"
+              />
             </div>
 
             <div class="row">
@@ -90,8 +95,12 @@
                 <label for="email">Email</label>
                 <div class="msg msgEmail"></div>
               </div>
-              <input class="stepInput" type="text" id="email"placeholder="e.g. stephenking@lorem.com"/>
-  
+              <input
+                class="stepInput"
+                type="text"
+                id="email"
+                placeholder="e.g. stephenking@lorem.com"
+              />
             </div>
 
             <div class="row">
@@ -99,17 +108,24 @@
                 <label for="name">Phone number</label>
                 <div class="msg msgPhone"></div>
               </div>
-              <input class="stepInput" type="text" id="phone" placeholder="e.g. +1 234 567 890" />
-              
+              <input
+                class="stepInput"
+                type="text"
+                id="phone"
+                placeholder="e.g. +1 234 567 890"
+              />
             </div>
-
           </div>
           <div class="step-foot">
             <div class="foot1">
               <button class="btn-back">Go Back</button>
             </div>
             <div class="foot2">
-              <input class="btn-next btn-next1" type="submit" value="Next Step">
+              <input
+                class="btn-next btn-next1"
+                type="submit"
+                value="Next Step"
+              />
               <!-- <button class="btn-next btn-next1">Next Step</button> -->
             </div>
           </div>
@@ -129,56 +145,46 @@
 
           <div class="step2-main">
             <div class="step2-card">
-
               <label class="card card1">
-                <input type="radio" name="radio" >
+                <input type="radio" id="radio1" name="radio" />
                 <span class="radio-btn">
                   <div class="hobbies-icon">
-                    <img src="./assets/images/icon-arcade.svg">
+                    <img src="./assets/images/icon-arcade.svg" />
 
                     <p class="card-title">Arcade</p>
-                    <p class="pricing pricing1">$9/mo</p>
+                    <p class="pricing pricing1"></p>
                     <p class="yearly-free">2 month free</p>
                   </div>
                 </span>
               </label>
-
-              <!-- <div class="card card1">
-                <img src="./assets/images/icon-arcade.svg" alt="" />
-                <p class="card-tile">Arcade</p>
-
-                <p class="pricing pricing1">$9/mo</p>
-                <p class="yearly-free">2 month free</p>
-              </div> -->
-
               <label class="card card2">
-                <input type="radio" name="radio" >
+                <input type="radio" id="radio2" name="radio" />
                 <span class="radio-btn">
                   <div class="hobbies-icon">
-                    <img src="./assets/images/icon-advanced.svg">
-                    
+                    <img src="./assets/images/icon-advanced.svg" />
+
                     <p class="card-title">Advanced</p>
-                    <p class="pricing pricing1">$12/mo</p>
+                    <p class="pricing pricing2"></p>
                     <p class="yearly-free">2 month free</p>
                   </div>
                 </span>
               </label>
               <label class="card card3">
-                <input type="radio" name="radio" >
+                <input type="radio" id="radio3" name="radio" />
                 <span class="radio-btn">
                   <div class="hobbies-icon">
-                    <img src="./assets/images/icon-pro.svg">
-                    
+                    <img src="./assets/images/icon-pro.svg" />
+
                     <p class="card-title">Pro</p>
-                    <p class="pricing pricing1">$15/mo</p>
+                    <p class="pricing pricing3"></p>
                     <p class="yearly-free">2 month free</p>
                   </div>
                 </span>
               </label>
-              </div>
+            </div>
             <div class="plan-type">
               <p class="pri-month">Monthly</p>
-              <input type="checkbox" id="switch" checked/>
+              <input type="checkbox" id="switch" checked />
               <label for="switch"></label>
               <p class="pri-year">Yearly</p>
             </div>
@@ -189,7 +195,11 @@
               <button class="btn-back">Go Back</button>
             </div>
             <div class="foot2">
-              <input class="btn-next btn-next2" type="submit" value="Next Step">
+              <input
+                class="btn-next btn-next2"
+                type="submit"
+                value="Next Step"
+              />
               <!-- <button class="btn-next">Next Step</button> -->
             </div>
           </div>
@@ -210,7 +220,7 @@
             <div class="step3-r step3-r1">
               <div class="check">
                 <label class="check1">
-                  <input type="checkbox" id="checkbox1"/>
+                  <input type="checkbox" id="checkbox1" />
                   <span class="checkmark"></span>
                 </label>
               </div>
@@ -218,12 +228,16 @@
                 <p class="addon-title">Online service</p>
                 <p>Access to multiplayer games</p>
               </div>
-              <div class="pricing">+$1/mo</div>
+              <div class="pricing">
+                <span>+$</span>
+                <span class="pri1"></span>
+                <span class="priPlan"></span>
+              </div>
             </div>
-            <div class="step3-r step3-r2">
+            <div class="step3-r  step3-r2">
               <div class="check">
                 <label class="check2">
-                  <input type="checkbox" id="checkbox2"/>
+                  <input type="checkbox" id="checkbox2" />
                   <span class="checkmark"></span>
                 </label>
               </div>
@@ -231,12 +245,16 @@
                 <p class="addon-title">Larger storage</p>
                 <p>Extra 1TB of cloud save</p>
               </div>
-              <div class="pricing">+$2/mo</div>
+              <div class="pricing">
+                <span>+$</span>
+                <span class="pri2"></span>
+                <span class="priPlan"></span>
+              </div>
             </div>
-            <div class="step3-r step3-r3">
+            <div class="step3-r  step3-r3">
               <div class="check">
                 <label class="check3">
-                  <input type="checkbox" id="checkbox3"/>
+                  <input type="checkbox" id="checkbox3" />
                   <span class="checkmark"></span>
                 </label>
               </div>
@@ -244,7 +262,11 @@
                 <p class="addon-title">Customizable Profile</p>
                 <p>Custom theme on your profile</p>
               </div>
-              <div class="pricing">+$2/mo</div>
+              <div class="pricing">
+                <span>+$</span>
+                <span class="pri3"></span>
+                <span class="priPlan"></span>
+              </div>
             </div>
           </div>
 
@@ -253,7 +275,11 @@
               <button class="btn-back">Go Back</button>
             </div>
             <div class="foot2">
-              <input class="btn-next btn-next3" type="submit" value="Next Step">
+              <input
+                class="btn-next btn-next3"
+                type="submit"
+                value="Next Step"
+              />
               <!-- <button class="btn-next">Next Step</button> -->
             </div>
           </div>
@@ -272,29 +298,55 @@
           <div class="step4-main">
             <div class="c-plan">
               <div class="c-name">
-                <div class="c-name1">AA</div>
+                <div>
+                  <span class="c-nameCard"></span>
+                  <span class="c-namePlan"></span>
+                </div>
+
                 <a href="">Change</a>
               </div>
-              <div class="c-pri">12</div>
+              <div>
+                <span>+$</span>
+                <span class="c-namePri"></span>
+                <span class="a-plan"></span>
+              </div>
+              
             </div>
             <div class="c-addon">
               <hr />
-              <div class="c-add">
-                <div class="c-name c-name1">BBBB</div>
-                <div class="c-pri c-pri1">123</div>
+              <div class="c-add c-add1">
+                <div class="c-name c-name1"></div>
+                <div class="c-pri">
+                  <span>+$</span>
+                  <span class="a-pri1"></span>
+                  <span class="a-plan"></span>
+                </div>
               </div>
-              <div class="c-add">
-                <div class="c-name c-name2">BBBB</div>
-                <div class="c-pri c-pri2">123</div>
+              <div class="c-add c-add2">
+                <div class="c-name c-name2"></div>
+                <div class="c-pri">
+                  <span>+$</span>
+                  <span class="a-pri2"></span>
+                  <span class="a-plan"></span>
+                </div>
               </div>
-              <div class="c-add">
-                <div class="c-name c-name3">BBBB</div>
-                <div class="c-pri c-pri3">123</div>
+              <div class="c-add c-add3">
+                <div class="c-name c-name3">aaaa</div>
+                <div class="c-pri">
+                  <span>+$</span>
+                  <span class="a-pri3">12323</span>
+                  <span class="a-plan">year</span>
+                </div>
               </div>
             </div>
             <div class="c-total">
               <div class="c-totalName">Total (per month/year)</div>
-              <div class="c-totalPri">2134</div>
+              <div class="c-totalPri">
+                <span>+$</span>
+                <span class="totalPri"></span>
+                <span class="a-plan"></span>
+              </div>
+              
             </div>
 
             <!-- Dynamically add subscription and add-on selections here -->
@@ -305,7 +357,7 @@
               <button class="btn-back">Go Back</button>
             </div>
             <div class="foot2">
-              <input class="btn-confirm" type="submit" value="Confirm">
+              <input class="btn-confirm" type="submit" value="Confirm" />
               <!-- <button class="btn-confirm">Confirm</button> -->
             </div>
           </div>

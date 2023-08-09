@@ -115,6 +115,7 @@ body{
     display: grid;
     grid-template-columns: auto auto;
     margin-top: 5%;
+    margin-bottom: 5%;
     width: 100%;
     /* justify-content: flex-end; */
 } 
@@ -213,24 +214,25 @@ body{
     margin-bottom: 2%;
 }
 
-/* .step2-card{
+.step2-card{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
 
-} */
+}
 
 .card{
-    flex: 15%;
-    margin: 2%;
-    padding: 2%;
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid hsl(229, 24%, 87%);
+    /* flex: 20%; */
+    /* margin: 5%; */
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .card:hover{
     border-color: hsl(243, 100%, 62%);
-    cursor: pointer;
 }
 /*radio btn css*/
 .card input{
@@ -239,13 +241,23 @@ body{
 
 .radio-btn{
     display: inline-block;
+    position: relative;
+    text-align: left;
+    padding: 15%;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid hsl(229, 24%, 87%);
+}
+
+.radio-btn:hover{
+    cursor: pointer;
 }
 
 .card input:checked + .radio-btn{
   border: 2px solid hsl(243, 100%, 62%);
 }
 
-.card input:checked + .radio-btn > i 
+.card input:checked + .card > i 
 {
   opacity: 1;
   transform: translateX(-50%) scale(1);
@@ -350,7 +362,7 @@ label:active:after {
 
 .step3-r{
     margin: 2% 0;
-    padding: 2%;
+    padding: 2% 3%;
     background-color:white ;
     border: 1px solid hsl(229, 24%, 87%);
     border-radius: 5px;
@@ -362,21 +374,30 @@ label:active:after {
 .step3-r:hover{
     border-color: hsl(243, 100%, 62%);
     background-color:hsl(231, 100%, 99%) ;
+    cursor: pointer;
 }
 .step3-r .addon{
-    flex: 80%;
+    flex: 70%;
 }
 
 .step3-r .pricing{
     flex: 10%;
     margin: 2% auto;
     color: gray;
+    text-align: right;
 }
 
 .addon-title{
     font-size: 1rem;
     color: hsl(213, 96%, 18%);
     line-height: 1.2rem;
+}
+
+/* class for js */
+
+.selectCheckbox{
+    border-color: hsl(243, 100%, 62%);
+    background-color: hsl(217, 100%, 97%);
 }
 
 
@@ -478,6 +499,10 @@ label:active:after {
     flex: 80%;
 }
 
+.c-namePlan{
+    font-size: 14px;
+}
+
 .c-add{
     color:hsl(231, 11%, 63%);
     display: flex;
@@ -487,10 +512,13 @@ label:active:after {
 }
 
 .c-total{
+    margin-top: 3%;
+    margin-bottom: 7%;
     padding: 3% 2%;
     display: flex;
     flex-direction: row;
     color:hsl(231, 11%, 63%);
+    
 }
 
 .c-totalPri{

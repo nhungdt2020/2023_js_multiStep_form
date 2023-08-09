@@ -1,6 +1,6 @@
 // console.log("hello");
 
-
+//-----------btn next------------------
 function showNextPage() {
   let currentStep = $(".sb.active");
 
@@ -26,7 +26,7 @@ $(".btn-confirm").click(function () {
   $(".step[data-content-step=5]").addClass("active");
 });
 
-//---------btn Back------------------
+//---------btn Back--------------------
 $(".btn-back").click(function () {
   let currentStep = $(".sb.active");
 
@@ -48,81 +48,35 @@ $(".btn-back").click(function () {
 });
 
 // ------------------------step1---------------------------------------------
-//validate step1 by keypress on input
-$(document).ready(function () {
-  $("#name, #email, #phone").change(function (e) {
-    if (this.id === "name") {
-      let checkName = valName(e.target.value);
-      //   console.log("this name =", check)
-      if (checkName != "") {
-        $(this).parent().find(".msg").text(checkName);
-      } else {
-        $(this).parent().find(".msg").text(checkName);
-        $("#email").focus();
-      }
-    }
 
-    if (this.id === "email") {
-      let checkEmail = valEmail(e.target.value);
-      if (checkEmail != "") {
-        $(this).parent().find(".msg").text(checkEmail);
-      } else {
-        $(this).parent().find(".msg").text(checkEmail);
-        $("#phone").focus();
-      }
-    }
 
-    if (this.id === "phone") {
-      let checkPhone = valPhone(e.target.value);
-      if (checkPhone != "") {
-        $(this).parent().find(".msg").text(checkPhone);
-      } else {
-        $(this).parent().find(".msg").text(checkPhone);
-        $(".btn-next").focus();
-      }
-    }
-  });
-
-  $(".btn-next1").click(function (e) {
-    // prevent the form from submitting
-    e.preventDefault();
-
-    //check validate
-    let checkName = valName($("#name").val());
-    let checkEmail = valEmail($("#email").val());
-    let checkPhone = valPhone($("#phone").val());
-
-    // console.log('checkname', checkName);
-
+//show msg validate to class .msg
+function showMsgName(checkName){
     if (checkName != "") {
       $(".msgName").text(checkName);
     } else {
       $(".msgName").text(checkName);
       $("#email").focus();
     }
+}
 
+function showMsgEmail(checkEmail){
     if (checkEmail != "") {
       $(".msgEmail").text(checkEmail);
     } else {
       $(".msgEmail").text(checkEmail);
       $("#phone").focus();
     }
+}
 
+function showMsgPhone(checkPhone){
     if (checkPhone != "") {
       $(".msgPhone").text(checkPhone);
     } else {
       $(".msgPhone").text(checkPhone);
       $(".btn-next").focus();
     }
-
-    if (checkName === "" && checkEmail === "" && checkPhone === "") {
-      showNextPage();
-    }
-
-
-    // showNextPage();
-  });
-});
+}
 
 //validate input
 function valName(inputValue) {
@@ -164,51 +118,81 @@ function isPhone(number) {
   return /(84|0[3|5|7|8|9])+([0-9]{8})\b/.test(number);
 }
 
-//-------------------------step2------------------------------------------
+//validate step1 by keypress on input
+$(document).ready(function () {
 
-//css when click to select card
-$(".card1, .card2, .card3").click(function () {
-//   console.log(this.className);
-//   if (this.className === "card card1") {
-//     $(".card1").css("background-color", "hsl(231, 100%, 99%)");
-//     $(".card1").css("border-color", "hsl(243, 100%, 62%)");
-//     $(".card2,.card3").css("background-color", "white");
-//     $(".card2,.card3").css("border-color", "hsl(229, 24%, 87%)");
+  $("#name, #email, #phone").change(function (e) {
+    if (this.id === "name") {
+      let checkName = valName(e.target.value);
+      showMsgName(checkName);
+    }
+    if (this.id === "email") {
+      let checkEmail = valEmail(e.target.value);
+      showMsgEmail(checkEmail);
+    }
 
-//   }
-//   if (this.className === "card card2") {
-//     $(".card2").css("background-color", "hsl(231, 100%, 99%)");
-//     $(".card2").css("border-color", "hsl(243, 100%, 62%)");
-//     $(".card1,.card3").css("background-color", "white");
-//     $(".card1,.card3").css("border-color", "hsl(229, 24%, 87%)");
+    if (this.id === "phone") {
+      let checkPhone = valPhone(e.target.value);
+      showMsgPhone(checkPhone);
 
-//   }
+    }
+  });
 
-//   if (this.className === "card card3") {
-//     $(".card3").css("background-color", "hsl(231, 100%, 99%)");
-//     $(".card3").css("border-color", "hsl(243, 100%, 62%)");
-//     $(".card1,.card2").css("background-color", "white");
-//     $(".card1,.card2").css("border-color", "hsl(229, 24%, 87%)");
+  $(".btn-next1").click(function (e) {
+    // prevent the form from submitting
+    e.preventDefault();
 
+    // check validate
+    const checkName = valName($("#name").val());
+    const checkEmail = valEmail($("#email").val());
+    const checkPhone = valPhone($("#phone").val());
 
-//   }
+    showMsgName(checkName);
+    showMsgPhone(checkPhone);
+    showMsgEmail(checkEmail);
+
+    if (checkName === "" && checkEmail === "" && checkPhone === "") {
+      showNextPage();
+    $("#radio1").prop('checked', true);
+
+    let toggleClickStatus = $(":checkbox").is(":checked");
+    if (toggleClickStatus === true) {
+      $(".pricing1").text("$90/mo");
+      $(".pricing2").text("$120/mo");
+      $(".pricing3").text("$150/mo");
+  
+      $(".yearly-free").css("display", "block");
+    } else {
+      $(".pricing1").text("$9/mo");
+      $(".pricing2").text("$12/mo");
+      $(".pricing3").text("$15/mo");
+  
+      $(".yearly-free").css("display", "none");
+    }
+    }})
+      
+
+    //bo qua validate
+
+    // showNextPage();
+    // $("#radio1").prop('checked', true);
 
 });
+
+//-------------------------step2------------------------------------------
+
 
 //change price when change plan
 $("#switch").click(function () {
   let toggleClickStatus = $(":checkbox").is(":checked");
-  console.log("toggleClickStatus", toggleClickStatus);
 
   if (toggleClickStatus === true) {
-    console.log("aaaaaaaaaa");
     $(".pricing1").text("$90/mo");
     $(".pricing2").text("$120/mo");
     $(".pricing3").text("$150/mo");
 
     $(".yearly-free").css("display", "block");
   } else {
-    console.log("bbbbbbbbbb");
     $(".pricing1").text("$9/mo");
     $(".pricing2").text("$12/mo");
     $(".pricing3").text("$15/mo");
@@ -219,51 +203,167 @@ $("#switch").click(function () {
 
 $(".btn-next2").click(function(){
     showNextPage();
+
+    $("#checkbox1,#checkbox2").prop('checked', true);
+    $('.step3-r1,.step3-r2').addClass('selectCheckbox');
+
+    //show next addon 
+    let toggleClickStatus = $("#switch").is(":checked");
+    if(toggleClickStatus == true){
+      $('.priPlan').text('/yr');
+
+      $('.pri1').text('10');
+      $('.pri3,.pri2').text('20');
+
+    } else{
+      $('.priPlan').text('/mo');
+
+      $('.pri1').text('1');
+      $('.pri3,.pri2').text('2');
+    }
+
 })
 
 //-------------------------step3------------------------------------------
+//set checkbox checked
+$('.step3-r1,.step3-r2,.step3-r3').click(function(){
+  console.log($(this).attr("class"));
+  var checkbox = $(this).children().children().children('input[type="checkbox"]');
+
+  checkbox.prop('checked', !checkbox.prop('checked'));
+  if(checkbox.is(':checked')){
+    $(this).addClass('selectCheckbox');
+  }else{
+    $(this).removeClass('selectCheckbox');
+  }
+
+})
+
 $("#checkbox1, #checkbox2, #checkbox3").click(function () {
   //   console.log("hello from step3", this.id);
 
-  if ($("#checkbox1").is(":checked") === true) {
-    $(".step3-r1").css("background-color", "hsl(217, 100%, 97%)");
-    $(".step3-r1").css("border-color", "hsl(243, 100%, 62%)");
-  } else {
-    $(".step3-r1").css("background-color", "white");
-    $(".step3-r1").css("border-color", "hsl(229, 24%, 87%)");
-  }
-
-  if ($("#checkbox2").is(":checked") === true) {
-    console.log("hello step2");
-    $(".step3-r2").css("background-color", "hsl(217, 100%, 97%)");
-    $(".step3-r2").css("border-color", "hsl(243, 100%, 62%)");
-  } else {
-    $(".step3-r2").css("background-color", "white");
-    $(".step3-r2").css("border-color", "hsl(229, 24%, 87%)");
-  }
-
-  if ($("#checkbox3").is(":checked") === true) {
-    console.log("hello step3");
-    $(".step3-r3").css("background-color", "hsl(217, 100%, 97%)");
-    $(".step3-r3").css("border-color", "hsl(243, 100%, 62%)");
-  } else {
-    $(".step3-r3").css("background-color", "white");
-    $(".step3-r3").css("border-color", "hsl(229, 24%, 87%)");
-  }
+    if ($(this).is(":checked")){
+      $(this).parent().parent().parent().addClass('selectCheckbox');
+    } else{
+      $(this).parent().parent().parent().removeClass('selectCheckbox');
+    }
 });
 
+//show next page
 $(".btn-next3").click(function(){
     showNextPage();
-
-    var username = $("#name").value;
-    console.log('username from step1',username);
 })
+
+
+
 
 //-------------------------step4------------------------------------------
 
-// $(".btn-next3").click(function () {
-//   console.log("hello step4");
 
-//   var username = $("#name").value;
-//   console.log('username from step1',username);
-// });
+$(".btn-next3").click(function () {
+
+  //get data from step1
+  const inputName = $("#name").val();
+  console.log('inputName',inputName);
+
+  //get data from step2
+  var toggleClickStatusFinal = $("#switch").is(":checked");
+
+  if(toggleClickStatusFinal === true){
+    // console.log('yearly plan')
+    $('.c-namePlan').text('(yearly)');
+    $('.a-plan').text('/yr');
+  } else{
+    // console.log('monthly plan')
+    $('.c-namePlan').text('(monthly)');
+    $('.a-plan').text('/mo');
+  }
+
+  if($("#radio1").is(':checked')){
+    $('.c-nameCard').text('Arcade');
+    if(toggleClickStatusFinal === true){
+      $('.c-namePri').text('90');
+    }else{
+      $('.c-namePri').text('9');
+    }
+  } 
+ if($("#radio2").is(':checked')){
+    $('.c-nameCard').text('Advanced');
+    if(toggleClickStatusFinal === true){
+      $('.c-namePri').text('120');
+    }else{
+      $('.c-namePri').text('12');
+    }
+  } 
+  
+  if($("#radio3").is(':checked')){
+    $('.c-nameCard').text('Pro');
+
+    if(toggleClickStatusFinal == true){
+      $('.c-namePri').text('150');
+    }else{
+      $('.c-namePri').text('15');
+    }
+  } 
+
+  //show selected data from step3
+  if($('#checkbox1').is(':checked')){
+    $('.c-add1').css('display','flex');
+
+    $('.c-name1').text('Online service');
+    if(toggleClickStatusFinal == true){
+      $('.a-pri1').text('10');
+    }else{
+      $('.a-pri1').text('1');
+    }
+  } else{
+    $('.a-pri1').text('0');
+    $('.c-add1').css('display','none');
+  }
+
+  if($('#checkbox2').is(':checked')){
+    $('.c-add2').css('display','flex');
+
+    $('.c-name2').text('Large storage');
+    if(toggleClickStatusFinal == true){
+      $('.a-pri2').text('20');
+    }else{
+      $('.a-pri2').text('2');
+    }
+  } else{
+    $('.a-pri2').text('0');
+    $('.c-add2').css('display','none');
+  }
+
+  if($('#checkbox3').is(':checked')){
+    $('.c-add3').css('display','flex');
+
+    $('.c-name3').text('Customnizable profile');
+    if(toggleClickStatusFinal == true){
+      $('.a-pri3').text('20');
+    }else{
+      $('.a-pri3').text('2');
+    }
+  } else{
+    $('.a-pri3').text('0');
+    $('.c-add3').css('display','none');
+  }
+
+
+  let planNum = parseInt($(".c-namePri").text());
+  let planAdd1 = parseInt($(".a-pri1").text());
+  let planAdd2 = parseInt($(".a-pri2").text());
+  let planAdd3 = parseInt($(".a-pri3").text());
+
+
+  let total = planNum +planAdd1 + planAdd2 + planAdd3;
+
+  $('.totalPri').text(total);
+});
+
+//show next page
+$(".btn-confirm").click(function(){
+  showNextPage();
+})
+
+//-------------------------step4------------------------------------------
